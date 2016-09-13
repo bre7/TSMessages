@@ -281,13 +281,6 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
         }
         else
         {
-<<<<<<< HEAD
-            // On iOS 7 and above use a blur layer instead (not yet finished)
-            _backgroundBlurView = [[TSBlurView alloc] init];
-            self.backgroundBlurView.autoresizingMask = (UIViewAutoresizingFlexibleWidth);
-            self.backgroundBlurView.blurTintColor = [UIColor hx_colorWithHexString:current[@"backgroundColor"]];
-            [self addSubview:self.backgroundBlurView];
-=======
             NSNumber* blurValue = [current valueForKey:@"blurBackground"];
             BOOL useBlur = YES;
             if(blurValue){
@@ -320,7 +313,6 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
                     make.bottom.equalTo(self.mas_bottom);
                 }
             }];
->>>>>>> ec0aa9be29ab79083e4957ac500f3af2f622605d
         }
 
         UIColor *fontColor = [UIColor hx_colorWithHexString:[current valueForKey:@"textColor"]];
@@ -483,18 +475,9 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
         // Add a border on the bottom (or on the top, depending on the view's postion)
         if (![TSMessage iOS7StyleEnabled])
         {
-<<<<<<< HEAD
-            _borderView = [[UIView alloc] initWithFrame:CGRectMake(0.0,
-                                                                   0.0, // will be set later
-                                                                   screenWidth,
-                                                                   [[current valueForKey:@"borderHeight"] floatValue])];
-            self.borderView.backgroundColor = [UIColor hx_colorWithHexString:[current valueForKey:@"borderColor"]];
-            self.borderView.autoresizingMask = (UIViewAutoresizingFlexibleWidth);
-=======
             _borderView = [[UIView alloc] initWithFrame:CGRectZero];
             self.borderView.backgroundColor = [UIColor colorWithHexString:[current valueForKey:@"borderColor"]];
             self.borderView.translatesAutoresizingMaskIntoConstraints = NO;
->>>>>>> ec0aa9be29ab79083e4957ac500f3af2f622605d
             [self addSubview:self.borderView];
             [self.borderView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.leading.and.trailing.equalTo(self);
