@@ -287,7 +287,7 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
                 useBlur = blurValue.boolValue;
             }
             
-            UIColor* bgColor = [UIColor colorWithHexString:current[@"backgroundColor"]];
+            UIColor* bgColor = [UIColor hx_colorWithHexString:current[@"backgroundColor"]];
 
             if(useBlur){
                 TSBlurView* blur = [[TSBlurView alloc] init];
@@ -323,7 +323,7 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
             _iconImageView = [[UIImageView alloc] initWithImage:image];
             self.iconImageView.translatesAutoresizingMaskIntoConstraints = NO;
             
-            UIColor* imageTintColor = [UIColor colorWithHexString:[current valueForKey:@"imageTintColor"]];
+            UIColor* imageTintColor = [UIColor hx_colorWithHexString:[current valueForKey:@"imageTintColor"]];
             if(imageTintColor){
                 self.iconImageView.tintColor = imageTintColor;
             }
@@ -416,7 +416,7 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
             _button = [UIButton buttonWithType:UIButtonTypeCustom];
             self.button.translatesAutoresizingMaskIntoConstraints = NO;
 
-            UIColor* buttonTintColor = [UIColor colorWithHexString:[current valueForKey:@"buttonTintColor"]];
+            UIColor* buttonTintColor = [UIColor hx_colorWithHexString:[current valueForKey:@"buttonTintColor"]];
             if(buttonTintColor){
                 self.button.tintColor = buttonTintColor;
             }
@@ -476,7 +476,7 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
         if (![TSMessage iOS7StyleEnabled])
         {
             _borderView = [[UIView alloc] initWithFrame:CGRectZero];
-            self.borderView.backgroundColor = [UIColor colorWithHexString:[current valueForKey:@"borderColor"]];
+            self.borderView.backgroundColor = [UIColor hx_colorWithHexString:[current valueForKey:@"borderColor"]];
             self.borderView.translatesAutoresizingMaskIntoConstraints = NO;
             [self addSubview:self.borderView];
             [self.borderView mas_makeConstraints:^(MASConstraintMaker *make) {
